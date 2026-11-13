@@ -79,6 +79,17 @@ The immediate goal is to document these dependencies and qualify the smallest cr
 
 Gate completion is evidence-based. An identified blocker can be a valid G0 finding; it is **not** proof that the later experiments work.
 
+## Current working threads
+
+The initial source-audit review exposed meaningful constraints; these issues are the current shared discussion points:
+
+1. [G0 · Source audit and upstream blockers](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1)
+2. [G1 · Minimal Evidence Bundle v0.1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/2)
+3. [G1 · TM-listener observability and HK decoding](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/3)
+4. [G1 · Recovery criteria and A/B/C contrast](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/4)
+
+The [initial concept note and experimental design proposal](docs/proposals/README.md) are **historical discussion drafts**, not approved results. The index provides exact PDF fingerprints and upload status. Please review the issues against current source revisions before treating a design assumption as an implementation requirement.
+
 ## Working rules
 
 - **Joint design and mutual review.** Decisions affecting the shared boundary are made in the open, with both sides able to challenge them.
