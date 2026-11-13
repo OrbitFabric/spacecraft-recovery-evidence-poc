@@ -6,10 +6,10 @@ The PDFs are prepared for upload to this directory. The following fingerprints i
 
 | Proposed repository filename | Pages | SHA-256 |
 | --- | ---: | --- |
-| `OrbitFabric_OpenOBSW_OpenSVF_Joint_Concept_Note_20261110.pdf` | 5 | `2932b66de45ebc30e0234c2b07b7161694824a1c8db87ce03e7c597fb522b7d1` |
-| `OrbitFabric_OpenOBSW_OpenSVF_Experimental_Design_Proposal_20261110.pdf` | 8 | `837c0bdac43ce37b34c3b0e303d1c6051252ddbfc6da53a70c3921b1933fcf0c` |
+| [`OrbitFabric_OpenOBSW_OpenSVF_Joint_Concept_Note_20261110.pdf`](OrbitFabric_OpenOBSW_OpenSVF_Joint_Concept_Note_20261110.pdf) | 5 | `2932b66de45ebc30e0234c2b07b7161694824a1c8db87ce03e7c597fb522b7d1` |
+| [`OrbitFabric_OpenOBSW_OpenSVF_Experimental_Design_Proposal_20261110.pdf`](OrbitFabric_OpenOBSW_OpenSVF_Experimental_Design_Proposal_20261110.pdf) | 8 | `837c0bdac43ce37b34c3b0e303d1c6051252ddbfc6da53a70c3921b1933fcf0c` |
 
-**Status:** PDFs not yet present in the repository; upload the verified originals through GitHub's **Add file → Upload files** interface (target `docs/proposals/`), retaining exact filenames.
+**Status: Uploaded and verified.** Both PDFs are now present in this directory. Their Git blob IDs match the hashes computed from the original local files (respectively `ea7115c6ef751fd2adf77935cf715247150f93f9` for the Concept Note and `a46a8e56abde3bd604621826420686a7a490f4fa` for the Experimental Design Proposal). The SHA-256 values above identify the unchanged original bytes.
 
 Once uploaded, verify the files against the hashes above. No change to the PDF is implied by the repository index.
 
