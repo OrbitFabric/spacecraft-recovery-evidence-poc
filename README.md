@@ -110,6 +110,8 @@ The preferred editorial venue for the eventual Engineering Story is [OrbitFabric
 
 This repository is being established as a **shared PoC workspace**. The initial concept note and experimental design proposal are discussion drafts; their agreed revisions and technical decisions will be recorded here.
 
-No license has been selected yet. **Public visibility does not grant permission to reuse code or documents.** Licensing and contribution conventions will be agreed before bringing third-party code or substantive implementation into this repository.
+This repository adopts the **[Apache License, Version 2.0](LICENSE)** for project-owned material. This is aligned with [OrbitFabric](https://github.com/OrbitFabric/orbitfabric) and [openSVF](https://github.com/lipofefeyt/opensvf) and supports collaborative, reusable PoC code with explicit licensing terms.
 
-For now, use issues for design questions, upstream dependency tracking, and evidence-contract proposals. Avoid interpreting an open issue or document draft as an implementation authorization.
+The historical discussion drafts in [`docs/proposals/`](docs/proposals/README.md) remain unmodified and retain their attribution and provenance; this license does not transfer third-party copyright or override any separately stated rights. Third-party code must keep its applicable license and notices. Decisions on contribution boundaries and upstreaming remain subject to joint review.
+
+Use issues and PRs for design questions, upstream dependency tracking and evidence-contract proposals. A license choice does **not** by itself approve an implementation, establish an Evidence Bundle contract or authorize a recovery conclusion.
