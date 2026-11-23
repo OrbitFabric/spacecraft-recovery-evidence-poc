@@ -46,15 +46,21 @@ CI status at pinned commits:
 
 ## 4. Scope-change disclosure
 
-The original proposal specified a simulator-only enabler and stated that flight `src/` code would remain untouched.
+The original proposal described a simulation-only enabler and assumed that flight `src/` code would remain untouched. **That assumption was too narrow for the complete openOBSW v0.19 change train.** Gonçalo corrected the original scope note in [PoC issue #1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1#issuecomment-7068637637). Per-PR changed-file lists were checked independently:
 
-This statement is **no longer accurate for the full set of changes that enabled the evidence story**:
+| openOBSW PR | Flight-source paths touched under `src/` | Nature of change |
+| --- | --- | --- |
+| [#124](https://github.com/lipofefeyt/openobsw/pull/124) | `src/task/pus.c`, `src/platform/stm32h7/main.c` | Signed S20 temperature typing and related platform handling |
+| [#125](https://github.com/lipofefeyt/openobsw/pull/125) | `src/pus/s12.c`, `src/task/pus.c` | S12 event auxiliary-data encoding/alignment |
+| [#126](https://github.com/lipofefeyt/openobsw/pull/126) | `src/pus/s5.c`, `src/task/fdir.c` | SRDB-generated SAFE-trigger configuration |
+| [#127](https://github.com/lipofefeyt/openobsw/pull/127) | **None** | Host-simulation mode events; no `src/` change |
+| [#128](https://github.com/lipofefeyt/openobsw/pull/128) | `src/task/mode.c`, `src/task/pus.c` | S12-to-SAFE coupling and FreeRTOS FSM concurrency control |
+| [#129](https://github.com/lipofefeyt/openobsw/pull/129) | `src/task/fdir.c`, `src/task/mode.c`, `src/task/pus.c` | OBT-based TM timestamps in FreeRTOS task contexts |
+| [#130](https://github.com/lipofefeyt/openobsw/pull/130) | `src/platform/zynqmp/main.c`; comment/banner-only edits in `src/platform/stm32h7/main.c`, `src/task/tmtc.c` and `src/task/fdir.c` | Reject/ignore incompatible frame length on ZynqMP; other listed flight-source changes are textual |
 
-- [#130](https://github.com/lipofefeyt/openobsw/pull/130), the sensor-frame v4 enabler, keeps the thermal injection design simulation-specific; a ZynqMP frame-length check was also added.
-- [#128](https://github.com/lipofefeyt/openobsw/pull/128) changed FreeRTOS flight-source task logic to couple S12 to the SAFE FSM, including concurrency handling.
-- [#129](https://github.com/lipofefeyt/openobsw/pull/129) changed flight-source TM timestamp handling.
+**Scope distinction:** `src/` changes do **not** imply that the thermal input is consumed by flight targets. At this baseline, **only `sim/main.c` applies `obc_temperature_raw` / `thermal_valid` to the monitored parameter**. The ZynqMP target and STM32H7 superloop do not use the added thermal fields; the STM32H7 FreeRTOS TMTC task accepts only TC frames. The upstream thermal A/B path is **host-SIL only**.
 
-These were separately upstream-reviewed changes, outside the narrower original assumption. We acknowledge the change of scope rather than retroactively claiming `src/` remained unchanged. Neither change constitutes flight-hardware verification.
+The STM32H7 [Renode S12-to-SAFE test](https://github.com/lipofefeyt/openobsw/blob/v0.19/renode/test_s12_safe_stm32h7.py) exercises the FDIR coupling using **`bdot_gain` (`0x20A0`)**, set while NOMINAL, not the thermal sensor-frame input. Renode evidence is not board-level hardware verification, and no race-specific concurrency test was presented for #128. Each upstream change followed its own review and testing process; neither source changes nor Renode results establish flight-hardware qualification.
 
 ## 5. Residuals and proposed gate disposition
 
@@ -65,8 +71,8 @@ Residuals to carry forward, not bury:
 1. [G1 observability issue #3](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/3): qualify the TM listener's actual capture semantics, completeness and ordering; preserve full HK/S5 observations independently from procedure steps.
 2. [G1 bundle issue #2](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/2): define native vs derived fields, provenance, OBT/simulation clock correlation, record integrity and completeness.
 3. [G1 criteria issue #4](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/4): revise SAFE evidence predicates now that `0x0002` exists; specify unknown/coverage semantics and the A/C evidence contrast.
-4. openSVF: simulator stderr is logged internally but not retained as a first-class campaign artifact; fault-engine `duration_s` expiry is not guaranteed by the current stepping path. Use explicit fault clearance; do not infer duration expiry.
-5. Test TM on-board timestamp vs HK OBT and simulator time under resets, TC(9,128), missing packets and incomplete coverage; no end-to-end PoC qualification yet.
+4. At the **pinned openSVF `034945e` baseline**, the sim stderr reader is not kept active after startup, so a fatal exit can surface only as missed sync; `duration_s` fault expiry also does not advance correctly. Use explicit fault clearance and do not claim full simulator-exit evidence at this pin. These issues were subsequently addressed upstream in [openSVF #208](https://github.com/lipofefeyt/opensvf/pull/208) and [#207](https://github.com/lipofefeyt/opensvf/pull/207), respectively, released in **openSVF v1.3.0** on 2026-11-23. Qualify these changes as part of the proposed G1 baseline, not retroactively as v0.19/`034945e` G0 evidence.
+5. Test TM onboard timestamp vs HK OBT and simulator time under resets, TC(9,128), missing packets and incomplete coverage. At the pinned baseline, S1 verification TM of TC(9,128) carries the **pre-update OBT** (OBSW-SRS-153); this is expected, not a capture defect. [openSVF #209](https://github.com/lipofefeyt/opensvf/pull/209) subsequently added upstream L3 time-alignment tests, but no PoC evidence-chain qualification exists yet.
 6. Carry the ZynqMP CI toolchain-install failure as a **release qualification caveat** without making it a blocker to this host-SIL G1 design task.
 
 ### Proposed G0 acceptance record
