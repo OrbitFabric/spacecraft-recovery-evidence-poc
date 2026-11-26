@@ -1,8 +1,10 @@
 # G0 baseline reconciliation — openOBSW v0.19 / openSVF 034945e
 
 **Date:** 2026-11-20  
-**Status:** Review candidate, **not** a unilateral gate closure  
+**Status:** Historical G0 source-audit candidate (2026-11-20); **G0 source feasibility closed 2026-11-26** after PR #5 merge and issue #1 closeout.  
 **Related:** [PoC issue #1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1), [G1 evidence inventory](../design/evidence-field-inventory.md)
+
+> **Closeout record (2026-11-26):** [PR #5](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/pull/5) was merged as `5702a0a6499b2d3a1dbcb52255f59d6df772aabb`, and [G0 issue #1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1) closed after the source-scope correction recorded below. The six residuals remain G1 inputs. The historical G0 source and test basis is unchanged; no G1 evidence-contract approval or operational recovery conclusion follows from closure.
 
 ## 1. Frozen evidence basis
 
@@ -64,7 +66,7 @@ The STM32H7 [Renode S12-to-SAFE test](https://github.com/lipofefeyt/openobsw/blo
 
 ## 5. Residuals and proposed gate disposition
 
-**G0 source feasibility:** evidence supports **proceeding with G1**, with upstream host-SIL prerequisites satisfied. **G0 formal closure is pending joint review of this note and issue #1.**
+**G0 source feasibility:** evidence supports **proceeding with G1**, with upstream host-SIL prerequisites satisfied. **G0 was subsequently closed on 2026-11-26 after PR #5 merge and issue #1 closeout; see the record above.**
 
 Residuals to carry forward, not bury:
 
@@ -81,6 +83,6 @@ Residuals to carry forward, not bury:
 - [x] Reconcile original blocker list with implemented changes and tests.
 - [x] Identify upstream CI outcome and hardware-scope limitations.
 - [x] Record the out-of-original-scope flight-source changes.
-- [ ] Obtain joint review and formal disposition on [issue #1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1).
+- [x] Record source-feasibility closeout on [issue #1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1) following Gonçalo's conditional review and PR #5 merge (2026-11-26).
 
 **No GO for an OrbitFabric recovery verdict, C experiment, or engineering-story result is granted by this G0 reconciliation.**
