@@ -6,7 +6,7 @@ A joint engineering proof of concept exploring the boundary between **spacecraft
 
 This is an open, collaborative investigation involving [OrbitFabric](https://github.com/OrbitFabric), [openOBSW](https://github.com/lipofefeyt/openobsw), and [openSVF](https://github.com/lipofefeyt/opensvf). The engineering question comes first; the technologies are here to help us answer it.
 
-> **Status:** G0 source audit has identified a concrete execution blocker and candidate enablers. G1 evidence-contract design is the proposed next step. No recovery outcome has been experimentally qualified by this PoC yet.
+> **Status (2026-11-20):** openOBSW **v0.19** and openSVF **034945e** now implement and upstream-test the thermal fault/clearance path in host SIL. The G0 baseline is reconciled for joint review and **G1 evidence-contract work can proceed**. The PoC has **not** yet produced an independent A/B/C assessment or a qualified Evidence Bundle. See the [G0 review note](docs/gates/g0-source-baseline-20261120.md) and [G1 field inventory](docs/design/evidence-field-inventory.md).
 
 ## The question
 
@@ -49,22 +49,19 @@ Malformed or unverifiable evidence must be **rejected at the input-validation bo
 
 The precise interface between these roles is **to be jointly designed**, not imposed on either upstream project. This PoC does not assume that all proposed recovery semantics or evidence exporters already exist in OrbitFabric or openSVF.
 
-## G0: what the initial source audit established
+## G0: initial findings and current qualified baseline
 
-The preliminary joint review has identified important limitations in the current host-simulation path:
+The [original concept and experimental-design drafts](docs/proposals/README.md) recorded a genuine source-audit blocker: openOBSW had no simulator-driven S12-monitorable temperature that could clear while SAFE, and several observation/time semantics were not yet aligned.
 
-- No currently S12-monitorable S20 parameter is driven by the simulator's sensor input. The proposed `obc_temperature` path is presently S20-table-driven.
-- `TC(20,1)` is rejected in SAFE. Scheduling it through S11 or invoking it through S19 does not bypass the mode-gated dispatcher.
-- The host simulator's S12 → S5 → SAFE coupling must **not** be presented as demonstrated flight-target/HIL FDIR equivalence.
-- Host-simulator event timestamps, SAFE observability, parameter scaling, and event auxiliary-data decoding require explicit treatment in the evidence contract.
-- openSVF's existing campaign report is useful but does not persist complete S5 event or housekeeping histories. The `HilAdapter.add_tm_listener` hook is a candidate for a PoC-owned evidence exporter; the required parameter decoding remains to be verified.
+Since that review, upstream changes have materially advanced the executable baseline:
 
-**Candidate upstream enablers (subject to separate issues and review):**
+- **openOBSW v0.19** ([release](https://github.com/lipofefeyt/openobsw/releases/tag/v0.19), commit `c9fdc5d`) adds the **v4 thermal sensor frame**, simulator mode-entry events, TM OBT timestamps, temperature/S12 event encoding corrections, and STM32H7 S12-to-SAFE coupling. The STM32H7 coupling has Renode evidence, **not hardware qualification**.
+- **openSVF** ([PR #198](https://github.com/lipofefeyt/opensvf/pull/198), commit `034945e`) pins v0.19, provides the F1 OBC thermal input model with fault injection and explicit clearance, decodes HK set 1 by SRDB, and includes source-backed upstream **A-like and B-like L3 integration tests**. Upstream openSVF CI passed at that commit.
+- **Scope changed:** across the v0.19 PR train, **#124–#126 and #128–#130 touched `src/`; only #127 did not**. The thermal input is **consumed only in the host simulator**, while FreeRTOS S12/SAFE coupling was demonstrated under Renode with a different parameter and not on hardware. See the [per-PR scope reconciliation](docs/gates/g0-source-baseline-20261120.md#4-scope-change-disclosure).
+- **Residual caveat:** openOBSW's v0.19 release CI had 10 passed jobs and one ZynqMP bare-metal job failure at **toolchain installation**. This is not an all-green qualification, but it does not block host-SIL G1 design.
+- **Critical boundary:** the executed upstream tests are **not** OrbitFabric recovery verdicts, continuous TM evidence custody, or a PoC outcome C. Keeping SAFE after the fault clears is behavior under observation, not an autonomous return to operations.
 
-1. **openOBSW, simulation only:** extend the input sensor frame with a thermal value and validity indicator, then feed the monitored S20 parameter without changing flight source code.
-2. **openSVF:** add a thermal equipment model that feeds that interface and supports controlled fault application and clearance through existing equipment-fault mechanisms.
-
-The immediate goal is to document these dependencies and qualify the smallest credible execution path, not to bypass the blocker or predetermine results.
+See [G0 source and CI reconciliation](docs/gates/g0-source-baseline-20261120.md) for pinned sources, PRs, scope changes and pending gate disposition. The [Evidence Field Inventory v0.1 proposal](docs/design/evidence-field-inventory.md) identifies what can actually be captured, what requires qualification and what is still unavailable.
 
 ## Proposed gate plan
 
@@ -81,7 +78,7 @@ Gate completion is evidence-based. An identified blocker can be a valid G0 findi
 
 ## Current working threads
 
-The initial source-audit review exposed meaningful constraints; these issues are the current shared discussion points:
+The original G0 questions are preserved as historical context. These issues now track the source-backed baseline and the open G1 contract questions:
 
 1. [G0 · Source audit and upstream blockers](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/1)
 2. [G1 · Minimal Evidence Bundle v0.1](https://github.com/OrbitFabric/spacecraft-recovery-evidence-poc/issues/2)
