@@ -1,0 +1,6 @@
+subsystems:
+  - id: obc
+    name: On-Board Computer
+    type: core
+    criticality: critical
+    description: Synthetic host-SIL OBC used in the bounded thermal SAFE experiment.

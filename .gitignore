@@ -1,0 +1,7 @@
+# PoC-local Python products / generated inputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+**/generated/
+experiments/g1/evidence/local-runs/

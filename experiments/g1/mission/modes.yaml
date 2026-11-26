@@ -1,0 +1,12 @@
+modes:
+  NOMINAL:
+    description: Declared starting mode for the bounded thermal experiment, not a claim about spacecraft boot.
+    initial: true
+  SAFE:
+    description: Protective mode entered following the thermal hard-limit condition; no automatic return to NOMINAL is specified.
+
+mode_transitions:
+  - from: NOMINAL
+    to: SAFE
+    reason: thermal_hard_limit
+    description: Declared host-SIL fault response; not a spacecraft operations authorization.
