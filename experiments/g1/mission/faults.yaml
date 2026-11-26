@@ -1,0 +1,17 @@
+faults:
+  - id: obc.thermal_high_fault
+    source: obc
+    severity: critical
+    description: >-
+      Synthetic declaration of the monitored OBC temperature crossing the
+      1250 raw-count high limit. The native S12 monitor setup and precise
+      debounce behavior must be verified against openSVF/openOBSW evidence.
+    condition:
+      telemetry: obc.temperature_raw
+      operator: ">"
+      value: 1250
+    emits:
+      - obc.thermal_hard_limit
+    recovery:
+      mode_transition: SAFE
+      auto_commands: []

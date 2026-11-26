@@ -1,0 +1,150 @@
+{
+  "experiment": "G1_OFFLINE_ASSESSMENT",
+  "policy": {
+    "version": "experimental-v0.4",
+    "hard_limit_raw": 1250,
+    "required_5s_hk_samples": 5,
+    "max_gap_s": 1.2,
+    "openobsw_pin": "a4c56715cbf57e34d7812b71a4d5f32cf9285b18",
+    "opensvf_pin": "9bf3f3a29696f695a6406080ad4436cb4a5154fc",
+    "simulator_sha256_pin": "4672bdc9473d6097b6a7dfba4085992b4013b6e99b84f4f1e97c628ef662ba7b"
+  },
+  "evaluated_at_utc": "2026-11-25T16:41:11.888912+00:00",
+  "cases": {
+    "A": {
+      "verdict": "ADMISSIBLE",
+      "criteria": {
+        "safe_entry": {
+          "state": "SATISFIED",
+          "reason": "S5 hard-limit, S5 SAFE-entry and fault-phase HK3"
+        },
+        "thermal_clearance": {
+          "state": "SATISFIED",
+          "reason": "HK1 below limit with 5 s sampled coverage"
+        },
+        "safe_mode_observation": {
+          "state": "SATISFIED",
+          "reason": "HK3 SAFE sampled throughout window; S5 stream admitted intact"
+        },
+        "capture_coverage": {
+          "state": "SATISFIED",
+          "reason": "required HK1/HK3 windows covered and link reports no faults"
+        }
+      },
+      "observed": {
+        "post_hk1_raw": [
+          650,
+          650,
+          650,
+          650,
+          650
+        ],
+        "post_hk3_modes": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "safe_entry_event_count": 1,
+        "hard_limit_event_count": 1,
+        "post_hk1_coverage_5s": true,
+        "post_hk3_coverage_5s": true,
+        "required_observation_coverage_5s": true,
+        "source_link_zero_faults": true
+      },
+      "admission": "ACCEPTED",
+      "input_sha256": "ba3272ec94d20d574a564c46428a0deab4f98611254ea91f98825429abd289a8",
+      "packet_count": 70
+    },
+    "B": {
+      "verdict": "NOT_ADMISSIBLE",
+      "criteria": {
+        "safe_entry": {
+          "state": "SATISFIED",
+          "reason": "S5 hard-limit, S5 SAFE-entry and fault-phase HK3"
+        },
+        "thermal_clearance": {
+          "state": "VIOLATED",
+          "reason": "post-fault HK1 at/above hard limit"
+        },
+        "safe_mode_observation": {
+          "state": "SATISFIED",
+          "reason": "HK3 SAFE sampled throughout window; S5 stream admitted intact"
+        },
+        "capture_coverage": {
+          "state": "SATISFIED",
+          "reason": "required HK1/HK3 windows covered and link reports no faults"
+        }
+      },
+      "observed": {
+        "post_hk1_raw": [
+          1300,
+          1300,
+          1300,
+          1300,
+          1300
+        ],
+        "post_hk3_modes": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "safe_entry_event_count": 1,
+        "hard_limit_event_count": 1,
+        "post_hk1_coverage_5s": true,
+        "post_hk3_coverage_5s": true,
+        "required_observation_coverage_5s": true,
+        "source_link_zero_faults": true
+      },
+      "admission": "ACCEPTED",
+      "input_sha256": "704616c8aa033979647562c187e7d5dcca4659be5979cf45ccac483979e9ff20",
+      "packet_count": 70
+    },
+    "C": {
+      "verdict": "INDETERMINATE",
+      "criteria": {
+        "safe_entry": {
+          "state": "SATISFIED",
+          "reason": "S5 hard-limit, S5 SAFE-entry and fault-phase HK3"
+        },
+        "thermal_clearance": {
+          "state": "UNKNOWN",
+          "reason": "no persistent high sample, but clearance coverage or link continuity insufficient"
+        },
+        "safe_mode_observation": {
+          "state": "SATISFIED",
+          "reason": "HK3 SAFE sampled throughout window; S5 stream admitted intact"
+        },
+        "capture_coverage": {
+          "state": "UNKNOWN",
+          "reason": "required samples or link continuity missing"
+        }
+      },
+      "observed": {
+        "post_hk1_raw": [
+          650,
+          650
+        ],
+        "post_hk3_modes": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "safe_entry_event_count": 1,
+        "hard_limit_event_count": 1,
+        "post_hk1_coverage_5s": false,
+        "post_hk3_coverage_5s": true,
+        "required_observation_coverage_5s": false,
+        "source_link_zero_faults": true
+      },
+      "admission": "ACCEPTED",
+      "input_sha256": "06be47f6affad0e31c7bc6e6ed0608ffeca89df1ef1278bd1e99d0f2f562726b",
+      "packet_count": 67
+    }
+  }
+}

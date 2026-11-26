@@ -1,0 +1,14 @@
+events:
+  - id: obc.thermal_hard_limit
+    source: obc
+    severity: critical
+    description: Thermal high-limit event in the bounded synthetic experiment.
+    downlink_priority: critical
+    persistence: store_and_downlink
+
+  - id: obc.safe_entry
+    source: obc
+    severity: info
+    description: Entry into SAFE; corroborates, but does not replace, HK3 mode observations.
+    downlink_priority: high
+    persistence: store_and_downlink

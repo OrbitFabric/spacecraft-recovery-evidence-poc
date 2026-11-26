@@ -1,0 +1,3 @@
+# Deliberately no OrbitFabric packet contract in this first slice.
+# TM(3,25) HK1/HK3 and TM(5,4) event IDs are mapped by a PoC-local binding.
+packets: []

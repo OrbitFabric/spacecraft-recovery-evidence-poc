@@ -1,0 +1,38 @@
+telemetry:
+  - id: obc.temperature_raw
+    name: OBC Temperature Raw Count
+    type: int16
+    unit: raw_count
+    source: obc
+    sampling: 1Hz
+    criticality: critical
+    persistence: store_and_downlink
+    downlink_priority: critical
+    limits:
+      critical_high: 1250
+    quality:
+      required: true
+      default: good
+    description: >-
+      Synthetic host-SIL temperature encoding: degC = raw / 10 - 40.
+      Nominal 650 (25 degC), hard limit 1250 (85 degC), injected 1300
+      (90 degC). Values are OBSW-reported HK1, not equipment injection.
+
+  - id: obc.mode
+    name: Observed OBC Mode
+    type: enum
+    unit: none
+    source: obc
+    sampling: 1Hz
+    criticality: critical
+    persistence: store_and_downlink
+    downlink_priority: critical
+    enum:
+      - NOMINAL
+      - SAFE
+    quality:
+      required: true
+      default: good
+    description: >-
+      Operational mode read from host-SIL HK set 3. SAFE is the authoritative
+      mode observation in this experiment; an S5 entry event is corroborative.

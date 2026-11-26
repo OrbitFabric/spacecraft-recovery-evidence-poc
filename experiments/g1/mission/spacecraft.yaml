@@ -1,0 +1,7 @@
+spacecraft:
+  id: safe_thermal_evidence_demo
+  name: SAFE Thermal Evidence Demonstrator
+  class: cubesat
+  form_factor: 3U
+  mission_type: technology_demonstrator
+  model_version: 0.1.0

@@ -1,0 +1,853 @@
+{
+  "experiment": "G1_THERMAL_AB_CAPTURE",
+  "scenario": "A",
+  "capture_kind": "PARSED_TM",
+  "test_result": "PASS",
+  "error": null,
+  "generated_at_utc": "2026-11-24T17:29:17.535267+00:00",
+  "source_revisions": {
+    "openobsw": "a4c56715cbf57e34d7812b71a4d5f32cf9285b18",
+    "opensvf": "9bf3f3a29696f695a6406080ad4436cb4a5154fc"
+  },
+  "simulator_sha256": "4672bdc9473d6097b6a7dfba4085992b4013b6e99b84f4f1e97c628ef662ba7b",
+  "interventions": [
+    {
+      "action": "configure_s12_high_limit",
+      "sim_time_s": 1.5,
+      "threshold_raw": 1250.0
+    },
+    {
+      "action": "inject_stuck_thermal_fault",
+      "sim_time_s": 3.5,
+      "raw": 1300.0
+    },
+    {
+      "action": "clear_thermal_fault",
+      "sim_time_s": 5.0
+    }
+  ],
+  "observations": [
+    {
+      "index": 0,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.3,
+      "obt_seconds": 0,
+      "apid": 259,
+      "sequence_count": 0,
+      "service": 1,
+      "subservice": 1,
+      "app_data_hex": "1810c001"
+    },
+    {
+      "index": 1,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.3,
+      "obt_seconds": 0,
+      "apid": 259,
+      "sequence_count": 1,
+      "service": 1,
+      "subservice": 7,
+      "app_data_hex": "1810c001"
+    },
+    {
+      "index": 2,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.3,
+      "obt_seconds": 0,
+      "apid": 259,
+      "sequence_count": 0,
+      "service": 5,
+      "subservice": 1,
+      "app_data_hex": "0005"
+    },
+    {
+      "index": 3,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.3,
+      "obt_seconds": 0,
+      "apid": 259,
+      "sequence_count": 2,
+      "service": 1,
+      "subservice": 1,
+      "app_data_hex": "1810c001"
+    },
+    {
+      "index": 4,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.3,
+      "obt_seconds": 0,
+      "apid": 259,
+      "sequence_count": 3,
+      "service": 1,
+      "subservice": 7,
+      "app_data_hex": "1810c001"
+    },
+    {
+      "index": 5,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.4,
+      "obt_seconds": 100,
+      "apid": 259,
+      "sequence_count": 0,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 6,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.4,
+      "obt_seconds": 100,
+      "apid": 259,
+      "sequence_count": 1,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 7,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.9,
+      "obt_seconds": 100,
+      "apid": 259,
+      "sequence_count": 2,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000000"
+    },
+    {
+      "index": 8,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.9,
+      "obt_seconds": 100,
+      "apid": 259,
+      "sequence_count": 3,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "030200000064000000000000"
+    },
+    {
+      "index": 9,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.9,
+      "obt_seconds": 100,
+      "apid": 259,
+      "sequence_count": 4,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 10,
+      "phase": "nominal_setup",
+      "sim_time_s": 0.9,
+      "obt_seconds": 100,
+      "apid": 259,
+      "sequence_count": 5,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 11,
+      "phase": "nominal_setup",
+      "sim_time_s": 1.4,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 6,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 12,
+      "phase": "nominal_setup",
+      "sim_time_s": 1.4,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 7,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 13,
+      "phase": "monitor_configuration",
+      "sim_time_s": 1.5,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 4,
+      "service": 1,
+      "subservice": 1,
+      "app_data_hex": "1810c002"
+    },
+    {
+      "index": 14,
+      "phase": "monitor_configuration",
+      "sim_time_s": 1.5,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 5,
+      "service": 1,
+      "subservice": 7,
+      "app_data_hex": "1810c002"
+    },
+    {
+      "index": 15,
+      "phase": "monitor_configuration",
+      "sim_time_s": 1.9,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 8,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000001"
+    },
+    {
+      "index": 16,
+      "phase": "monitor_configuration",
+      "sim_time_s": 1.9,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 9,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "030200000065000000000000"
+    },
+    {
+      "index": 17,
+      "phase": "monitor_configuration",
+      "sim_time_s": 1.9,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 10,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 18,
+      "phase": "monitor_configuration",
+      "sim_time_s": 1.9,
+      "obt_seconds": 101,
+      "apid": 259,
+      "sequence_count": 11,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 19,
+      "phase": "monitor_configuration",
+      "sim_time_s": 2.4,
+      "obt_seconds": 102,
+      "apid": 259,
+      "sequence_count": 12,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 20,
+      "phase": "monitor_configuration",
+      "sim_time_s": 2.4,
+      "obt_seconds": 102,
+      "apid": 259,
+      "sequence_count": 13,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 21,
+      "phase": "monitor_configuration",
+      "sim_time_s": 2.9,
+      "obt_seconds": 102,
+      "apid": 259,
+      "sequence_count": 14,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000002"
+    },
+    {
+      "index": 22,
+      "phase": "monitor_configuration",
+      "sim_time_s": 2.9,
+      "obt_seconds": 102,
+      "apid": 259,
+      "sequence_count": 15,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "030200000066000000000000"
+    },
+    {
+      "index": 23,
+      "phase": "monitor_configuration",
+      "sim_time_s": 2.9,
+      "obt_seconds": 102,
+      "apid": 259,
+      "sequence_count": 16,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 24,
+      "phase": "monitor_configuration",
+      "sim_time_s": 2.9,
+      "obt_seconds": 102,
+      "apid": 259,
+      "sequence_count": 17,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 25,
+      "phase": "monitor_configuration",
+      "sim_time_s": 3.4,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 18,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 26,
+      "phase": "monitor_configuration",
+      "sim_time_s": 3.4,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 19,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 27,
+      "phase": "fault_activation",
+      "sim_time_s": 3.5,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 0,
+      "service": 5,
+      "subservice": 4,
+      "app_data_hex": "005144a28000"
+    },
+    {
+      "index": 28,
+      "phase": "fault_activation",
+      "sim_time_s": 3.5,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 1,
+      "service": 5,
+      "subservice": 4,
+      "app_data_hex": "0002"
+    },
+    {
+      "index": 29,
+      "phase": "fault_activation",
+      "sim_time_s": 3.9,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 20,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "0105140ce4138800000003"
+    },
+    {
+      "index": 30,
+      "phase": "fault_activation",
+      "sim_time_s": 3.9,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 21,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "030100000067000000000000"
+    },
+    {
+      "index": 31,
+      "phase": "fault_activation",
+      "sim_time_s": 3.9,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 22,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 32,
+      "phase": "fault_activation",
+      "sim_time_s": 3.9,
+      "obt_seconds": 103,
+      "apid": 259,
+      "sequence_count": 23,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 33,
+      "phase": "fault_activation",
+      "sim_time_s": 4.4,
+      "obt_seconds": 104,
+      "apid": 259,
+      "sequence_count": 24,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 34,
+      "phase": "fault_activation",
+      "sim_time_s": 4.4,
+      "obt_seconds": 104,
+      "apid": 259,
+      "sequence_count": 25,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 35,
+      "phase": "fault_activation",
+      "sim_time_s": 4.9,
+      "obt_seconds": 104,
+      "apid": 259,
+      "sequence_count": 26,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "0105140ce4138800000004"
+    },
+    {
+      "index": 36,
+      "phase": "fault_activation",
+      "sim_time_s": 4.9,
+      "obt_seconds": 104,
+      "apid": 259,
+      "sequence_count": 27,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "030100000068000000000000"
+    },
+    {
+      "index": 37,
+      "phase": "fault_activation",
+      "sim_time_s": 4.9,
+      "obt_seconds": 104,
+      "apid": 259,
+      "sequence_count": 28,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 38,
+      "phase": "fault_activation",
+      "sim_time_s": 4.9,
+      "obt_seconds": 104,
+      "apid": 259,
+      "sequence_count": 29,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 39,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.4,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 30,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 40,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.4,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 31,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 41,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.9,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 32,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000005"
+    },
+    {
+      "index": 42,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.9,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 33,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "020002000000000000001e"
+    },
+    {
+      "index": 43,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.9,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 34,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "030100000069000000000000"
+    },
+    {
+      "index": 44,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.9,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 35,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 45,
+      "phase": "post_fault_observation",
+      "sim_time_s": 5.9,
+      "obt_seconds": 105,
+      "apid": 259,
+      "sequence_count": 36,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 46,
+      "phase": "post_fault_observation",
+      "sim_time_s": 6.4,
+      "obt_seconds": 106,
+      "apid": 259,
+      "sequence_count": 37,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 47,
+      "phase": "post_fault_observation",
+      "sim_time_s": 6.4,
+      "obt_seconds": 106,
+      "apid": 259,
+      "sequence_count": 38,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 48,
+      "phase": "post_fault_observation",
+      "sim_time_s": 6.9,
+      "obt_seconds": 106,
+      "apid": 259,
+      "sequence_count": 39,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000006"
+    },
+    {
+      "index": 49,
+      "phase": "post_fault_observation",
+      "sim_time_s": 6.9,
+      "obt_seconds": 106,
+      "apid": 259,
+      "sequence_count": 40,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "03010000006a000000000000"
+    },
+    {
+      "index": 50,
+      "phase": "post_fault_observation",
+      "sim_time_s": 6.9,
+      "obt_seconds": 106,
+      "apid": 259,
+      "sequence_count": 41,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 51,
+      "phase": "post_fault_observation",
+      "sim_time_s": 6.9,
+      "obt_seconds": 106,
+      "apid": 259,
+      "sequence_count": 42,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 52,
+      "phase": "post_fault_observation",
+      "sim_time_s": 7.4,
+      "obt_seconds": 107,
+      "apid": 259,
+      "sequence_count": 43,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 53,
+      "phase": "post_fault_observation",
+      "sim_time_s": 7.4,
+      "obt_seconds": 107,
+      "apid": 259,
+      "sequence_count": 44,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 54,
+      "phase": "post_fault_observation",
+      "sim_time_s": 7.9,
+      "obt_seconds": 107,
+      "apid": 259,
+      "sequence_count": 45,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000007"
+    },
+    {
+      "index": 55,
+      "phase": "post_fault_observation",
+      "sim_time_s": 7.9,
+      "obt_seconds": 107,
+      "apid": 259,
+      "sequence_count": 46,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "03010000006b000000000000"
+    },
+    {
+      "index": 56,
+      "phase": "post_fault_observation",
+      "sim_time_s": 7.9,
+      "obt_seconds": 107,
+      "apid": 259,
+      "sequence_count": 47,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 57,
+      "phase": "post_fault_observation",
+      "sim_time_s": 7.9,
+      "obt_seconds": 107,
+      "apid": 259,
+      "sequence_count": 48,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 58,
+      "phase": "post_fault_observation",
+      "sim_time_s": 8.4,
+      "obt_seconds": 108,
+      "apid": 259,
+      "sequence_count": 49,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 59,
+      "phase": "post_fault_observation",
+      "sim_time_s": 8.4,
+      "obt_seconds": 108,
+      "apid": 259,
+      "sequence_count": 50,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 60,
+      "phase": "post_fault_observation",
+      "sim_time_s": 8.9,
+      "obt_seconds": 108,
+      "apid": 259,
+      "sequence_count": 51,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000008"
+    },
+    {
+      "index": 61,
+      "phase": "post_fault_observation",
+      "sim_time_s": 8.9,
+      "obt_seconds": 108,
+      "apid": 259,
+      "sequence_count": 52,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "03010000006c000000000000"
+    },
+    {
+      "index": 62,
+      "phase": "post_fault_observation",
+      "sim_time_s": 8.9,
+      "obt_seconds": 108,
+      "apid": 259,
+      "sequence_count": 53,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 63,
+      "phase": "post_fault_observation",
+      "sim_time_s": 8.9,
+      "obt_seconds": 108,
+      "apid": 259,
+      "sequence_count": 54,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 64,
+      "phase": "post_fault_observation",
+      "sim_time_s": 9.4,
+      "obt_seconds": 109,
+      "apid": 259,
+      "sequence_count": 55,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 65,
+      "phase": "post_fault_observation",
+      "sim_time_s": 9.4,
+      "obt_seconds": 109,
+      "apid": 259,
+      "sequence_count": 56,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    },
+    {
+      "index": 66,
+      "phase": "post_fault_observation",
+      "sim_time_s": 9.9,
+      "obt_seconds": 109,
+      "apid": 259,
+      "sequence_count": 57,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "01028a0ce4138800000009"
+    },
+    {
+      "index": 67,
+      "phase": "post_fault_observation",
+      "sim_time_s": 9.9,
+      "obt_seconds": 109,
+      "apid": 259,
+      "sequence_count": 58,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "03010000006d000000000000"
+    },
+    {
+      "index": 68,
+      "phase": "post_fault_observation",
+      "sim_time_s": 9.9,
+      "obt_seconds": 109,
+      "apid": 259,
+      "sequence_count": 59,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "04461c40003f0000003dcccccd"
+    },
+    {
+      "index": 69,
+      "phase": "post_fault_observation",
+      "sim_time_s": 9.9,
+      "obt_seconds": 109,
+      "apid": 259,
+      "sequence_count": 60,
+      "service": 3,
+      "subservice": 25,
+      "app_data_hex": "06000000000000000000"
+    }
+  ],
+  "link_health": {
+    "tm_received": 70,
+    "tm_parsed": 70,
+    "tm_dropped": 0,
+    "last_drop_reason": null,
+    "tc_sent": 3,
+    "tc_accepted": 3,
+    "tc_completed": 3,
+    "tc_rejected": {},
+    "mode_changes": [
+      [
+        0.9,
+        2
+      ],
+      [
+        3.9,
+        1
+      ]
+    ],
+    "desyncs": 0,
+    "hk_undecoded": 0,
+    "last_hk_problem": null,
+    "obsw_exit_status": null,
+    "obsw_stderr_tail": [
+      "[OBSW] Entered SAFE mode",
+      "[OBSW] Host sim started (wire protocol v4).",
+      "[OBSW] openobsw v0.20.0",
+      "[OBSW] SRDB version: 0.1.0",
+      "[OBSW] Recovered to NOMINAL",
+      "[OBSW] Entered SAFE mode"
+    ],
+    "healthy": true
+  },
+  "post_fault_window": {
+    "start_sim_time_s": 5.0,
+    "end_sim_time_s": 10.0,
+    "expected_hk1_raw": 650,
+    "observed_hk1_raw": [
+      650,
+      650,
+      650,
+      650,
+      650
+    ],
+    "observed_hk3_modes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+}
